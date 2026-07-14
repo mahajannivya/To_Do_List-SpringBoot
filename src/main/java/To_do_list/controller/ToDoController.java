@@ -5,6 +5,8 @@ import To_do_list.service.ToDoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ToDoController {
@@ -26,6 +28,13 @@ public class ToDoController {
         );
 
         return "index";
+    }
+    @PostMapping("/add")
+    public String addTask(@ModelAttribute ToDo todo){
+
+        service.addTask(todo);
+
+        return "redirect:/";
     }
 
 }
