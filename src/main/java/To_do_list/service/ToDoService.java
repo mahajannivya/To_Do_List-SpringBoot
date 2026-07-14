@@ -23,4 +23,21 @@ public class ToDoService {
     public void addTask(ToDo todo){
         repository.save(todo);
     }
+    public void deleteTask(Long id){
+
+        repository.deleteById(id);
+    }
+
+
+    public void completeTask(Long id){
+
+        ToDo todo = repository.findById(id).get();
+
+        todo.setCompleted(true);
+
+        repository.save(todo);
+    }
+
+
+
 }
