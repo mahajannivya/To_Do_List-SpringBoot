@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Todo List</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            width:500px;
+            margin:auto;
+        }
+
+        .completed{
+            text-decoration:line-through;
+            color:gray;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<h1>My Todo List</h1>
+
+
+<form action="/add" method="post" th:object="${todo}">
+
+    <input
+            type="text"
+            th:field="*{task}"
+            placeholder="Enter task"
+            required>
+
+
+    <button>Add</button>
+
+
+</form>
+
+
+
+<h2>Tasks</h2>
+
+
+<ul>
+
+
+    <li th:each="task:${tasks}">
+
+
+<span
+        th:text="${task.task}"
+        th:classappend="${task.completed}?'completed':''">
+</span>
+
+
+        <a th:href="@{/complete/{id}(id=${task.id})}">
+            Complete
+        </a>
+
+
+        <a th:href="@{/delete/{id}(id=${task.id})}">
+            Delete
+        </a>
+
+
+    </li>
+
+
+</ul>
+
+
+</body>
+
+</html>
