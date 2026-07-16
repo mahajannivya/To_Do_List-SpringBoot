@@ -1,0 +1,83 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body{
+    background-color: LightCyan;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.container{
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #ddd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+h1{
+    color: Indigo;
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: "Courier New", monospace;
+}
+
+h2{
+    color: LightSeaGreen;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-family: Arial, sans-serif;
+}
+
+/* Input Box */
+input[type="text"]{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus{
+    border-color: LightSeaGreen;
+    box-shadow: 0 0 8px rgba(32,178,170,0.3);
+}
+
+/* Button */
+button[type="submit"]{
+    width: 100%;
+    padding: 12px;
+    background-color: LightSeaGreen;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover{
+    background-color: Teal;
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active{
+    transform: scale(0.98);
+}
