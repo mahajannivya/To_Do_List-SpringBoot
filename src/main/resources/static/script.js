@@ -1,4 +1,4 @@
-const API = "http://localhost:8081/api/todos";
+const API = "http://localhost:8082/api/todos";
 
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
@@ -44,17 +44,14 @@ async function loadTasks() {
         const li = document.createElement("li");
 
         li.innerHTML = `
-            <span ${todo.completed ? 'style="text-decoration:line-through;"' : ""}>
+            <span class="${todo.completed ? "completed" : ""}">
                 ${todo.task}
             </span>
 
-            <button onclick="completeTask(${todo.id})">
-                Complete
-            </button>
-
-            <button onclick="deleteTask(${todo.id})">
-                Delete
-            </button>
+            <div class="actions">
+                <button class="complete-btn" onclick="completeTask(${todo.id})">✓</button>
+                <button class="delete-btn" onclick="deleteTask(${todo.id})">🗑</button>
+            </div>
         `;
 
         taskList.appendChild(li);
