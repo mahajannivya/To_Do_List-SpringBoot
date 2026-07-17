@@ -72,4 +72,12 @@ async function completeTask(id) {
 
 		}
 
+async function deleteTask(id) {
 
+			await fetch(`${API}/${id}`, {
+				method: "DELETE"
+			});
+
+			loadTasks();
+
+		}
