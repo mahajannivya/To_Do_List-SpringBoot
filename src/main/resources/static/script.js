@@ -62,4 +62,14 @@ async function loadTasks() {
     });
 
 }
+async function completeTask(id) {
+
+			await fetch(`${API}/${id}`, {
+				method: "PUT"
+			});
+
+			loadTasks();
+
+		}
+
 
