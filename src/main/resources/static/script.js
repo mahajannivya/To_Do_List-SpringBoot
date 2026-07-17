@@ -30,3 +30,36 @@ form.addEventListener("submit", async (e) => {
 
     loadTasks();
 });
+
+async function loadTasks() {
+
+    const response = await fetch(API);
+
+    const tasks = await response.json();
+
+    taskList.innerHTML = "";
+
+    tasks.forEach(todo => {
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            <span ${todo.completed ? 'style="text-decoration:line-through;"' : ""}>
+                ${todo.task}
+            </span>
+
+            <button onclick="completeTask(${todo.id})">
+                Complete
+            </button>
+
+            <button onclick="deleteTask(${todo.id})">
+                Delete
+            </button>
+        `;
+
+        taskList.appendChild(li);
+
+    });
+
+}
+
