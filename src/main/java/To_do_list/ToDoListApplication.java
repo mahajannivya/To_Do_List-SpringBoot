@@ -8,7 +8,8 @@ public class ToDoListApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ToDoListApplication.class, args);
-		System.out.println("\n Server is running at: http://localhost:8081/\n");
+		System.out.println("\n Server is running at: http://localhost:8082/\n");
+
 
 	}
 
